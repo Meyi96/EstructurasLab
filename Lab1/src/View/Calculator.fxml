@@ -15,7 +15,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="750.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.CalculatorController">
    <children>
-      <GridPane alignment="CENTER" layoutX="193.0" layoutY="175.0" prefHeight="135.0" prefWidth="271.0">
+      <GridPane alignment="CENTER" layoutX="193.0" layoutY="175.0" prefHeight="136.0" prefWidth="263.0">
         <columnConstraints>
             <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
           <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -30,22 +30,70 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" onAction="#press7" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="7" textFill="WHITE" />
-            <Button mnemonicParsing="false" onAction="#press4" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="4" textFill="WHITE" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#press1" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="1" textFill="WHITE" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#press8" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="8" textFill="WHITE" GridPane.columnIndex="1" />
-            <Button mnemonicParsing="false" onAction="#press5" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#press2" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-            <Button mnemonicParsing="false" onAction="#press9" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="9" textFill="WHITE" GridPane.columnIndex="2" />
-            <Button mnemonicParsing="false" onAction="#press6" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-            <Button mnemonicParsing="false" onAction="#press3" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#press0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressNext" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text="-&gt;" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="2" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressBefore" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text="&lt;-" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPre" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text="(" textFill="WHITE" GridPane.columnIndex="3" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPost" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text=")" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressNegative" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text="-" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1" />
-            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressDivide" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e;" text="/" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1" />
+            <Button mnemonicParsing="false" onAction="#press7" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="7" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press4" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="4" textFill="WHITE" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press1" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="1" textFill="WHITE" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press8" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="8" textFill="WHITE" GridPane.columnIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press5" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="5" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press2" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="2" textFill="WHITE" GridPane.columnIndex="1" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press9" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="9" textFill="WHITE" GridPane.columnIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press6" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="6" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button mnemonicParsing="false" onAction="#press3" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="3" textFill="WHITE" GridPane.columnIndex="2" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#press0" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text="0" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressNext" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text="-&gt;" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressBefore" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text="&lt;-" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPre" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text="(" textFill="WHITE" GridPane.columnIndex="3">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressPost" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text=")" textFill="WHITE" GridPane.columnIndex="3" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressNegative" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text="-" textFill="WHITE" GridPane.columnIndex="4" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
+            <Button minWidth="-Infinity" mnemonicParsing="false" onAction="#pressDivide" prefHeight="40.0" prefWidth="40.0" style="-fx-background-color: #eea30e; -fx-border-color: #c8681f;" text="/" textFill="WHITE" GridPane.columnIndex="5" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="15.0" />
+               </font></Button>
          </children>
       </GridPane>
       <HBox alignment="CENTER" layoutY="120.0" prefHeight="55.0" prefWidth="750.0">
@@ -151,14 +199,23 @@
             </ImageView>
          </children>
       </HBox>
-      <Label layoutX="224.0" layoutY="35.0" text="Calculadora de raices " textFill="WHITE">
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="215.0" layoutY="36.0" style="-fx-background-color: #484745; -fx-border-color: #ffffff;" text=" Calculadora de raices " textAlignment="CENTER" textFill="WHITE">
          <font>
             <Font name="CentSchbkCyrill BT Bold" size="27.0" />
          </font>
       </Label>
-      <Button layoutX="471.0" layoutY="223.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressCalculate" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1;" text="Calcular" />
-      <ComboBox fx:id="SelecGrade" layoutX="562.0" layoutY="86.0" prefHeight="25.0" prefWidth="157.0" promptText="Grado del polinomio" style="-fx-background-color: #b4b1b1;" />
-      <Button layoutX="379.0" layoutY="178.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressClean" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1;" text="Borrar" />
-      <Button layoutX="471.0" layoutY="177.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressRandom" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1;" text="Generar" />
+      <Button layoutX="459.0" layoutY="223.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressCalculate" prefHeight="85.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1; -fx-border-color: #ffffff;" text="Calcular">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <ComboBox fx:id="SelecGrade" layoutX="562.0" layoutY="86.0" onAction="#refreshGrade" prefHeight="25.0" prefWidth="157.0" promptText="Grado del polinomio" style="-fx-background-color: #b4b1b1; -fx-border-color: #ffffff;" />
+      <Button layoutX="370.0" layoutY="178.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressClean" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1; -fx-border-color: #ffffff;" text="Borrar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
+      <Button layoutX="459.0" layoutY="177.0" minWidth="-Infinity" mnemonicParsing="false" onAction="#pressRandom" prefHeight="40.0" prefWidth="85.0" style="-fx-background-color: #b4b1b1; -fx-border-color: #ffffff;" text="Generar">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font></Button>
    </children>
 </AnchorPane>
