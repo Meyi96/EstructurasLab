@@ -38,8 +38,6 @@ public class CalculatorController  implements Initializable{
     private TextField x0;
     @FXML
     private ComboBox<String> SelecGrade;
-    
-
     @FXML
     private TextArea rootText;
     @FXML
