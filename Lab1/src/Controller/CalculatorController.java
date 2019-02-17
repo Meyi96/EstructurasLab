@@ -4,6 +4,7 @@ import java.awt.event.FocusEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import Model.Polynomial;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -43,6 +44,7 @@ public class CalculatorController  implements Initializable{
     private int limited;
     private int current;
     private TextField[] textfield;
+    private Polynomial poly;
 
     
 
@@ -67,8 +69,6 @@ public class CalculatorController  implements Initializable{
     @FXML
     void press9(ActionEvent event) {textfield[current].setText(textfield[current].getText()+"9");}
     @FXML
-    void pressDivide(ActionEvent event) {textfield[current].setText(textfield[current].getText()+"/");}
-    @FXML
     void pressNegative(ActionEvent event) {textfield[current].setText("-");}
     @FXML
     void click0(MouseEvent event) {current =0;}
@@ -92,6 +92,11 @@ public class CalculatorController  implements Initializable{
     void click9(MouseEvent event) {current =9;}
     @FXML
     void click10(MouseEvent event) {current =10;}
+    @FXML
+    void pressDivide(ActionEvent event) {
+    	if(!textfield[current].getText().equals(""))
+    		if(textfield[current].getText().indexOf("/")==-1)
+    			textfield[current].setText(textfield[current].getText()+"/");}
     @FXML
     void pressBefore(ActionEvent event) {
     	if(textfield[current].getText().equals(""))
@@ -132,6 +137,9 @@ public class CalculatorController  implements Initializable{
     			textfield[i].setDisable(true);
     		}
 		}
+    	pressClean(event);
+    	textfield[limited].setText("");
+    	textfield[limited].requestFocus();
     }
     @FXML
     void pressClean(ActionEvent event) {
@@ -141,6 +149,7 @@ public class CalculatorController  implements Initializable{
     }
     @FXML
     void pressCalculate(ActionEvent event) {
+    	poly = new Polynomial(groupCoefficients(), limited);
     }
     
     @FXML
@@ -169,6 +178,17 @@ public class CalculatorController  implements Initializable{
 		textfield[10] = x10;
 		SelecGrade.getItems().addAll("Grado 2", "Grado 3", "Grado 4", "Grado 5",
 				                     "Grado 6", "Grado 7", "Grado 8", "Grado 9", "Grado 10");
+	}
+	public String groupCoefficients() {
+		String date ="";
+		for (int i = 0; i < limited+1; i++) {
+			if(i < limited)
+				date += textfield[i].getText() + " ";
+			else
+				date += textfield[i].getText();
+		}
+		System.out.println(date);
+		return date;
 	}
     
 

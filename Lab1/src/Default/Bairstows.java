@@ -1,4 +1,4 @@
-
+package Default;
 //----------------------- HOW TO USE THIS CODE --------------------------
 // The easiest way is to put the data in a file named input.txt
 // The first line is n, degree of the polynomial.
