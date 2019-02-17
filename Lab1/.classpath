@@ -3,21 +3,21 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.fx.ide.jdt.core.JAVAFX_CONTAINER"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-cdense-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-cdense-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-core-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-core-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-ddense-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-ddense-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-dsparse-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-dsparse-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-experimental-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-experimental-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-fdense-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-fdense-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-simple-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-simple-0.37.1-sources.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-zdense-0.37.1.jar"/>
-	<classpathentry kind="lib" path="C:/Users/nelso/Desktop/ejml-v0.37.1-libs/ejml-zdense-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-cdense-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-cdense-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-core-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-core-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-ddense-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-ddense-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-dsparse-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-dsparse-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-experimental-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-experimental-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-fdense-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-fdense-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-simple-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-simple-0.37.1.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-zdense-0.37.1-sources.jar"/>
+	<classpathentry kind="lib" path="Libs/ejml-zdense-0.37.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
