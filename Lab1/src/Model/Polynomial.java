@@ -1,8 +1,15 @@
 package Model;
 
+import org.ejml.data.Complex_F64;
+import org.ejml.data.DMatrixRMaj;
+import org.ejml.dense.row.factory.DecompositionFactory_DDRM;
+import org.ejml.interfaces.decomposition.EigenDecomposition_F64;
+
+import Default.PolynomialRootFinder;
+
 public class Polynomial {
 	
-	private String date;
+	private static String date;
 	private double coefficients[];
 	private double b[];
 	private double c[];
@@ -13,15 +20,24 @@ public class Polynomial {
 	public Polynomial(String date, int grade) {
 		this.date = date;
 		this.grade = grade;
-		coefficients = new double[11];
 		b = new double[20];
 	    c = new double[20];
 		numbers = new Number[11];
+	}
+	public String getDate() {
+		return date;
+	}
+	public void startBairstow() {
 		covertData();
 		solveBairstow();
 	}
+	public void startRootFinder() {
+		covertData();
+		findRoots(coefficients);
+	}
 	
 	public void covertData() {
+		coefficients = new double[grade+1];
 		String auxi[] = date.split(" ");
 		for (int i = 0; i < auxi.length; i++) {
 			numbers[i] = new Number(auxi[i]);
@@ -31,6 +47,7 @@ public class Polynomial {
 	
 	public void solveBairstow()
 	  {
+		date="";
 		int i, j;
 	    double r1, r2, du, dv, u, v, r, dr;
 	    double sq, det, nu, nv, error;
@@ -69,25 +86,19 @@ public class Polynomial {
 
 	        error = Math.sqrt(du * du + dv * dv);
 	      }
-	      System.out.println("1" + " " + (-1*u) + " "+(-1*v));
-	      for(int t=grade-2;t>=0;t--){
-	        System.out.print(b[t]+" ");
+	      for(int t=grade-2;t>=0;t--){ 
+	        date += "";
 	      }
-	      System.out.println();
 	      sq = u * u + 4 * v;
 
 	      if (sq < 0) {
 	        r1 = u/2;
 	        r2 = Math.sqrt(-sq)/2;
-
-	        System.out.println(r1 + " + " + r2 + "i");
-	        System.out.println(r1 + " - " + r2 + "i");
+	        date += r1 + " + " + r2 + "i\n"+r1 + " - " + r2 + "i\n";
 	      } else {
 	        r1 = u/2 + Math.sqrt(sq)/2;
 	        r2 = u/2 - Math.sqrt(sq)/2;
-
-	        System.out.println(r1);
-	        System.out.println(r2);
+	        date += r1 +"\n"+r2+"\n";
 	      }
 
 	      grade -= 2;
@@ -117,7 +128,7 @@ public class Polynomial {
 	        error = Math.abs(dr);
 	      }
 
-	      System.out.println(r);
+	      date +=r +"\n";
 	      grade--;
 
 	      for (i = 0; i < grade + 1; i++)
@@ -133,19 +144,64 @@ public class Polynomial {
 	      if (sq < 0) {
 	        r1 = u/2;
 	        r2 = Math.sqrt(-sq)/2;
-
-	        System.out.println(r1 + " + " + r2 + "i");
-	        System.out.println(r1 + " - " + r2 + "i");
+	        date += r1 + " + " + r2 + "i\n"+r1 + " - " + r2 + "i\n";
 	      } else {
 	        r1 = u/2 + Math.sqrt(sq)/2;
 	        r2 = u/2 - Math.sqrt(sq)/2;
-
-	        System.out.println(r1);
-	        System.out.println(r2);
+	        date += r1 +"\n"+r2+"\n";
 	      }
 	    } else if (grade == 1) {
-	      System.out.println(-coefficients[0] / coefficients[1]);
+	      date += -coefficients[0] / coefficients[1]+"\n";
 	    }
 	  }
+	
+	public static Complex_F64[] findRootss(double[] coefficients) {
+        int N = coefficients.length-1;
+
+        Complex_F64[] roots = PolynomialRootFinder.findRoots(coefficients);
+
+        int numReal = 0;
+        for( Complex_F64 c : roots ) {
+            if( c.isReal() ) {
+                checkRoot(c.real,4,3,2,1);
+                numReal++;
+            }
+        }
+        return roots;
+    }
+    private static void checkRoot( double root , double ...coefs ) {
+        double total = 0;
+
+        double a = 1;
+        for( double c : coefs ) {
+            total += a*c;
+            a *= root;
+        }
+
+    }
+    public static Complex_F64[] findRoots(double... coefficients) {
+        int N = coefficients.length-1;
+        DMatrixRMaj c = new DMatrixRMaj(N,N);
+
+        double a = coefficients[N];
+        for( int i = 0; i < N; i++ ) {
+            c.set(i,N-1,-coefficients[i]/a);
+        }
+        for( int i = 1; i < N; i++ ) {
+            c.set(i,i-1,1);
+        }
+        EigenDecomposition_F64<DMatrixRMaj> evd =  DecompositionFactory_DDRM.eig(N,false);
+
+        evd.decompose(c);
+
+        Complex_F64[] roots = new Complex_F64[N];
+        date="";
+        for( int i = 0; i < N; i++ ) {
+            roots[i] = evd.getEigenvalue(i);
+            date += roots[i] +"\n";
+        }
+
+        return roots;
+    }
 	
 }

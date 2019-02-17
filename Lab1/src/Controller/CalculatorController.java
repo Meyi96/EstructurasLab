@@ -1,16 +1,14 @@
 package Controller;
 
-import java.awt.event.FocusEvent;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import Model.Polynomial;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 
@@ -41,12 +39,16 @@ public class CalculatorController  implements Initializable{
     @FXML
     private ComboBox<String> SelecGrade;
     
+
+    @FXML
+    private TextArea rootText;
+    @FXML
+    private Label refreshName;
     private int limited;
     private int current;
     private TextField[] textfield;
     private Polynomial poly;
-
-    
+    private boolean bairstow;
 
     @FXML
     void press0(ActionEvent event) {textfield[current].setText(textfield[current].getText()+"0");}
@@ -122,7 +124,7 @@ public class CalculatorController  implements Initializable{
     @FXML
     void pressRandom(ActionEvent event) {
     	for (int i = 0; i < limited+1; i++) {
-			textfield[i].setText(""+(int)(Math.random()*99));
+			textfield[i].setText(""+(int)(Math.random()*15));
 		}
     }
     @FXML
@@ -146,24 +148,32 @@ public class CalculatorController  implements Initializable{
     	for (int i = 0; i < limited+1; i++) {
 			textfield[i].setText("0");
 		}
+    	rootText.setText("");
     }
     @FXML
     void pressCalculate(ActionEvent event) {
     	poly = new Polynomial(groupCoefficients(), limited);
+    	if(bairstow)
+    		poly.startBairstow();
+    	else
+    		poly.startRootFinder();
+    	rootText.setText(poly.getDate());
     }
-    
     @FXML
-    void pressPost(ActionEvent event) {
+    void pressBairstow(ActionEvent event) {
+    	bairstow = true;
+    	refreshName.setText("Bairstow");
     }
     @FXML
-    void pressPre(ActionEvent event) {
+    void pressRootFider(ActionEvent event) {
+    	bairstow = false;
+    	refreshName.setText("Root finder");
     }
-    
-    
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		limited = 10;
 		current = 10;
+		bairstow = true;
 		textfield = new TextField[11];
 		textfield[0] = x0;
 		textfield[1] = x1;
@@ -187,7 +197,6 @@ public class CalculatorController  implements Initializable{
 			else
 				date += textfield[i].getText();
 		}
-		System.out.println(date);
 		return date;
 	}
     
