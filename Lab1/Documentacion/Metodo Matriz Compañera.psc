@@ -22,23 +22,4 @@ SubProceso Complex_F64[] <- findRoots(coefficients por referencia)
 	FinPara
 FinSubProceso
 
-SubProceso checkRoot(root, coefs)
-	total = 0
-	a = 1
-	Para c =0 hasta coefs
-		total = total+(a*c)
-		a= a*root
-	FinPara
-FinSubProceso
 
-SubProceso Complex_F64[] <- findRootss(coefficients por referencia)
-	N = coefficients.length-1
-	definir roots como Complex_F64[]
-	numReal = 0
-	para Complex_F64 hasta root
-		si (c.isReal())
-			checkRoot(c.real,4,3,2,1)
-			numReal = numReal+1
-		FinSi
-	FinPara
-FinSubProceso

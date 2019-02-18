@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <diagram program="umlet" version="14.2">
-  <zoom_level>7</zoom_level>
+  <zoom_level>9</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>532</x>
-      <y>210</y>
-      <w>105</w>
-      <h>56</h>
+      <x>468</x>
+      <y>189</y>
+      <w>135</w>
+      <h>72</h>
     </coordinates>
     <panel_attributes>Calculator.fxml
 --
@@ -17,10 +17,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>497</x>
-      <y>133</y>
-      <w>175</w>
-      <h>70</h>
+      <x>423</x>
+      <y>90</y>
+      <w>225</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Main
 --
@@ -33,10 +33,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>490</x>
-      <y>343</y>
-      <w>182</w>
-      <h>182</h>
+      <x>414</x>
+      <y>360</y>
+      <w>234</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>Polynomial
 --
@@ -60,10 +60,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>189</x>
-      <y>126</y>
-      <w>224</w>
-      <h>371</h>
+      <x>27</x>
+      <y>81</y>
+      <w>288</w>
+      <h>477</h>
     </coordinates>
     <panel_attributes>Number
 --
@@ -104,10 +104,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>707</x>
-      <y>343</y>
-      <w>161</w>
-      <h>105</h>
+      <x>693</x>
+      <y>360</y>
+      <w>207</w>
+      <h>135</h>
     </coordinates>
     <panel_attributes>Number
 --
@@ -124,10 +124,10 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>168</x>
-      <y>91</y>
-      <w>266</w>
-      <h>427</h>
+      <x>0</x>
+      <y>36</y>
+      <w>342</w>
+      <h>549</h>
     </coordinates>
     <panel_attributes>Controller
 --</panel_attributes>
@@ -136,10 +136,10 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>469</x>
-      <y>98</y>
-      <w>231</w>
-      <h>182</h>
+      <x>387</x>
+      <y>45</y>
+      <w>297</w>
+      <h>234</h>
     </coordinates>
     <panel_attributes>View
 --</panel_attributes>
@@ -148,10 +148,10 @@
   <element>
     <id>UMLPackage</id>
     <coordinates>
-      <x>469</x>
-      <y>301</y>
-      <w>420</w>
-      <h>231</h>
+      <x>387</x>
+      <y>306</y>
+      <w>540</w>
+      <h>297</h>
     </coordinates>
     <panel_attributes>Model
 --</panel_attributes>
@@ -160,10 +160,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>574</x>
-      <y>441</y>
-      <w>252</w>
-      <h>119</h>
+      <x>522</x>
+      <y>486</y>
+      <w>324</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 - numbers[]
@@ -173,10 +173,10 @@ m1=3..10</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>308</x>
-      <y>490</y>
-      <w>259</w>
-      <h>119</h>
+      <x>180</x>
+      <y>549</y>
+      <w>333</w>
+      <h>153</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 - poly
@@ -187,10 +187,10 @@ m1=0..1
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>630</x>
-      <y>168</y>
-      <w>84</w>
-      <h>91</h>
+      <x>594</x>
+      <y>135</y>
+      <w>108</w>
+      <h>117</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 use</panel_attributes>
@@ -199,10 +199,10 @@ use</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>406</x>
-      <y>231</y>
-      <w>140</w>
-      <h>28</h>
+      <x>306</x>
+      <y>216</y>
+      <w>180</w>
+      <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
    use</panel_attributes>

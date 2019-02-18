@@ -39,6 +39,7 @@ public class Polynomial {
 	public void covertData() {
 		coefficients = new double[grade+1];
 		String auxi[] = date.split(" ");
+		//Hay que poner una exepción aqui
 		for (int i = 0; i < auxi.length; i++) {
 			numbers[i] = new Number(auxi[i]);
 			coefficients[i] = numbers[i].getNumber();
@@ -52,7 +53,7 @@ public class Polynomial {
 	    double r1, r2, du, dv, u, v, r, dr;
 	    double sq, det, nu, nv, error;
 	    double epsilon = 1e-8;
-	    while (grade > 3) {
+	    while (grade > 2) {
 	      u = 0;
 	      v = 0;
 	      error = 1;
@@ -107,33 +108,33 @@ public class Polynomial {
 	        coefficients[i] = b[i+2];
 	    }
 	    
-	    if (grade == 3) {
-	      r = 0;
-	      error = 1;
-	      b[grade] = coefficients[grade];
-
-	      while (error > epsilon) {
-	        b[2] = coefficients[2] + r * b[3];
-	        b[1] = coefficients[1] + r * b[2];
-	        b[0] = coefficients[0] + r * b[1];
-
-	        double d = coefficients[1] + (2 * coefficients[2] * r) + (3 * coefficients[3] * r * r);
-
-	        if (d == 0)
-	          dr = 1;
-	        else
-	          dr = -b[0] / d;
-
-	        r -= dr;
-	        error = Math.abs(dr);
-	      }
-
-	      date +=r +"\n";
-	      grade--;
-
-	      for (i = 0; i < grade + 1; i++)
-	        coefficients[i] = b[i + 1];
-	    }
+//	    if (grade == 3) {
+//	      r = 0;
+//	      error = 1;
+//	      b[grade] = coefficients[grade];
+//
+//	      while (error > epsilon) {
+//	        b[2] = coefficients[2] + r * b[3];
+//	        b[1] = coefficients[1] + r * b[2];
+//	        b[0] = coefficients[0] + r * b[1];
+//
+//	        double d = coefficients[1] + (2 * coefficients[2] * r) + (3 * coefficients[3] * r * r);
+//
+//	        if (d == 0)
+//	          dr = 1;
+//	        else
+//	          dr = -b[0] / d;
+//
+//	        r -= dr;
+//	        error = Math.abs(dr);
+//	      }
+//
+//	      date +=r +"\n";
+//	      grade--;
+//
+//	      for (i = 0; i < grade + 1; i++)
+//	        coefficients[i] = b[i + 1];
+//	    }
 
 
 	    if (grade == 2) {
@@ -155,30 +156,8 @@ public class Polynomial {
 	    }
 	  }
 	
-	public static Complex_F64[] findRootss(double[] coefficients) {
-        int N = coefficients.length-1;
-
-        Complex_F64[] roots = PolynomialRootFinder.findRoots(coefficients);
-
-        int numReal = 0;
-        for( Complex_F64 c : roots ) {
-            if( c.isReal() ) {
-                checkRoot(c.real,4,3,2,1);
-                numReal++;
-            }
-        }
-        return roots;
-    }
-    private static void checkRoot( double root , double ...coefs ) {
-        double total = 0;
-
-        double a = 1;
-        for( double c : coefs ) {
-            total += a*c;
-            a *= root;
-        }
-
-    }
+	
+    
     public static Complex_F64[] findRoots(double... coefficients) {
         int N = coefficients.length-1;
         DMatrixRMaj c = new DMatrixRMaj(N,N);
