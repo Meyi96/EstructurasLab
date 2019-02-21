@@ -1,0 +1,58 @@
+main(String args[]){   																			//Complejidad Temporal: T(n) = 73n + 150 (O(n)) Sea el n el maximo numero de iteraciones
+	a <- 0   																					//1
+	b <- 1   																					//1
+	c <- 2   																					//1
+	Muller(a,b,c)   																			//73n + 148
+}
+
+Muller(a,b,c){   																				//73n +148 
+	i <- 0   																					//1
+	res <- 0   																					//1
+	Mientras(true)   																			//(n+1)
+		i++   																					//6 * (n+1)
+		f1 <- f(a)    																			//6 * (n+1)
+        f2 <- f(b)    																			//6 * (n+1)
+        f3 <- f(c);    																			//1 * (n+1) 
+        d1 <- f1 - f3    																		//1 * (n+1)
+        d2 <- f2 - f3    																		//1 * (n+1)
+        h1 <- a - c    																			//1 * (n+1)
+        h2 <- b - c    																			//1 * (n+1) 
+        a0 <- f3    																			//1 * (n+1) 
+		a1 <- (((d2*pow(h1, 2)) - (d1*pow(h2, 2))) / ((h1*h2) * (h1-h2)))						//11 * (n+1) 
+        a2 <- (((d1*h2) - (d2*h1))/((h1*h2) * (h1-h2)))											//9 * (n+1)
+        x <- ((-2*a0)/(a1 + abs(sqrt(a1*a1-4*a0*a2))))											//9 * (n+1)
+        y <- ((-2*a0)/(a1-abs(sqrt(a1*a1-4*a0*a2))))											//9 * (n+1)
+
+		si (x >= y)																				//1 * (n+1) 
+            res = x + c																			//1 * (n+1)
+        Sino																					//0
+            res = y + c																			//0
+		FinSi
+		
+        m <- res*100;																			//1 * (n+1)
+        n <- c*100;																				//1 * (n+1)
+        m <- floor(m);																			//1 * (n+1)
+        n <- floor(n);																			//1 * (n+1)
+        si (m == n) 																			//0
+            break;
+			
+        a <- b;																					//1 * (n+1)
+        b <- c;																					//1 * (n+1)
+		c <- res;																				//1 * (n+1)
+        si (i > MAX_ITERATIONS)																	//1 * (n+1) 
+            Imprimir("Root cannot be found using" + " Muller's method");						//1			
+			break;																				//1
+	FinMientras	
+		
+    si (i <= MAX_ITERATIONS)																	//0 
+        Imprimir("The value of the root is " + res);											//0
+	FinSi
+
+}
+
+f(x)																								//6
+{ 
+    return 1*pow(x, 3) + 2*x*x + 10*x - 20															//6
+} 
+
+// La complejidad espacial de este algoritmo es O(1) dado que solo se utilizan constantes para ejecutar las operaciones.
