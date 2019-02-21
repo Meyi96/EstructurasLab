@@ -2,6 +2,9 @@ package Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+
+import javax.swing.JOptionPane;
+
 import Model.Polynomial;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -150,12 +153,15 @@ public class CalculatorController  implements Initializable{
     }
     @FXML
     void pressCalculate(ActionEvent event) {
-    	poly = new Polynomial(groupCoefficients(), limited);
-    	if(bairstow)
-    		poly.startBairstow();
-    	else
-    		poly.startRootFinder();
-    	rootText.setText(poly.getDate());
+    	if(!verifyCoefficients()) {
+    		poly = new Polynomial(groupCoefficients(), limited);
+        	if(bairstow)
+        		poly.startBairstow();
+        	else
+        		poly.startRootFinder();
+        	rootText.setText(poly.getDate());
+    	}
+    	
     }
     @FXML
     void pressBairstow(ActionEvent event) {
@@ -196,6 +202,19 @@ public class CalculatorController  implements Initializable{
 				date += textfield[i].getText();
 		}
 		return date;
+	}
+	private boolean verifyCoefficients() {
+		boolean alert = false;
+		for (int i = 0; i < limited; i++) {
+			try {
+				double a = Double.parseDouble(textfield[i].getText());
+			} catch (Exception e) {
+				JOptionPane.showMessageDialog(null,"Todos los coheficientes no son numeros");
+				alert =true;
+			}
+		}
+		
+		return alert;
 	}
     
 
