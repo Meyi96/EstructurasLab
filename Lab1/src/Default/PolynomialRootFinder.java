@@ -1,16 +1,9 @@
 package Default;
 
-import org.ejml.UtilEjml;
 import org.ejml.data.Complex_F64;
 import org.ejml.data.DMatrixRMaj;
-import org.ejml.data.DenseD2Matrix64F;
-import org.ejml.dense.row.factory.DecompositionFactory_CDRM;
 import org.ejml.dense.row.factory.DecompositionFactory_DDRM;
-import org.ejml.dense.row.factory.DecompositionFactory_FDRM;
-import org.ejml.dense.row.factory.DecompositionFactory_ZDRM;
-import org.ejml.interfaces.decomposition.EigenDecomposition;
 import org.ejml.interfaces.decomposition.EigenDecomposition_F64;
-import org.ejml.sparse.csc.factory.DecompositionFactory_DSCC;
 
 public class PolynomialRootFinder {
 
@@ -24,28 +17,7 @@ public class PolynomialRootFinder {
      * @param coefficients Coefficients of the polynomial.
      * @return The roots of the polynomial
      */
-    public static Complex_F64[] findRootss(double[] coefficients) {
-        int N = coefficients.length-1;
-
-        Complex_F64[] roots = PolynomialRootFinder.findRoots(coefficients);
-
-        int numReal = 0;
-        for( Complex_F64 c : roots ) {
-            if( c.isReal() ) {
-                checkRoot(c.real,4,3,2,1);
-                numReal++;
-            }
-        }
-        return roots;
-    }
-    private static void checkRoot( double root , double ...coefs ) {
-        double total = 0;
-        double a = 1;
-        for( double c : coefs ) {
-            total += a*c;
-            a *= root;
-        }
-    }
+    
     public static Complex_F64[] findRoots(double... coefficients) {
         int N = coefficients.length-1;
         DMatrixRMaj c = new DMatrixRMaj(N,N);

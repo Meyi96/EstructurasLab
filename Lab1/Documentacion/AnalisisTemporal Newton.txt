@@ -1,0 +1,49 @@
+Proceso computeRoot																					//Complejidad Temporal: (O(n)) Sea el n el tamaño del arrglo poly
+	EPSILON <- 0.0001																				//	1
+	INITIAL_GUESS <- 0.1																			//	1
+	MAX_ITERATIONS <- 100																			//	1
+	tamanio  <- 10																					//	1
+	DIMENSION poly[10] 																				//	1
+	val = newtonsMethod(poly por referencia, INITIAL_GUESS, 0)										//	(400n + 300)
+FinProceso
+
+SubProceso poly<- computeDerivate(poly Por Referencia)												//  metodo = 2n + 3
+	si (tamanio>1)entonces																			//	1										
+		para i=0 hasta tamanio																		//	n
+			poly[i] = poly[i]*i-1																	//	n
+		FinPara																						//	0
+	Sino																							//	0
+		poly[0] = 0																					//	0
+	FinSi																							//	0
+	
+FinSubProceso
+
+SubProceso val <- evaluale(poly por referencia, x)													//	metodo =  4n +3			
+	si (poly > tamanio) Entonces 																	//	1
+		resultado = 0																				//	1
+		Collections.reverse(poly)																	//	n
+		Para i=0 hasta tamanio																		//	n+1
+			result = result + poly[i]*Math.pow(x, tamanio-i-1)										//	n 
+			val =result																				//	n
+		FinPara																						//	0
+	Sino																							//	0
+		val = poly[0]+x																				//	0
+	FinSi																							//	0
+	
+FinSubProceso
+
+SubProceso val<- newtonsMethod(poly por referencia, x0, iter)									 	// metodo = (4n + 5) * 100 
+	x1 = x0																							//	1 * 100
+	retorno =0																						//	1 * 100
+	fx = evaluale(poly, x0)																			//	(4n + 3) * 100
+	definir list Como Entero																		//	1 * 100
+	Dimension list[10]																				//	1 * 100
+	si (iter = MAX_ITERATIONS || Math.abs(x0-x1)<= EPSILON) ENTONCES								//	1 * 100
+		retorno = x1																				//	0
+	Sino																							//	1 * 100
+		retorno = newtonMethod(list, iter++)														//	1 * 100
+	FinSi
+	
+FinSubProceso
+
+// La complejidad espacial de este algoritmo es O(n) dado que solo se utiliza una estructura lineal para almacenar los coeficientes.

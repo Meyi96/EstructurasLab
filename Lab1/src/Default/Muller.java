@@ -7,12 +7,12 @@ import java.text.*;
 
 class Muller{
    static double doFunction(double x) {
-      return 3 * x + x*x*x*2 - x*x*6;
+      return 3 * x + x*x*x*2 - x*x*6 + 5*x*x*x*x;
    }
 
    static void doMuller(double x2, double x0, double x1) {
 
-      int iterNum = 1;    /* how many times algorithm has been performed */
+      int iterNum = 1000000;    /* how many times algorithm has been performed */
       double f0, f1, f2, fr;  /* function values */
       double a, b, c;     /* quadratic coefficients */
       double h1, h2, gamma, gammaplus; /* used in computing quadratic
